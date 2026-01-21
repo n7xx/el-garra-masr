@@ -22,7 +22,7 @@ const HeroSection = () => {
               <img 
                 src={logo} 
                 alt="جزارة الغربية" 
-                className="h-28 w-auto object-contain drop-shadow-lg"
+                className="h-36 w-auto object-contain drop-shadow-lg"
               />
             </div>
 
@@ -81,7 +81,7 @@ const HeroSection = () => {
               <img
                 src={heroImage}
                 alt="فريق جزارة الغربية - لحوم طازة ومشويات شهية"
-                className="relative w-full max-w-md lg:max-w-lg xl:max-w-xl rounded-2xl shadow-2xl object-cover aspect-[4/5]"
+                className="relative w-full max-w-md lg:max-w-lg xl:max-w-xl rounded-2xl shadow-2xl object-cover aspect-[5/4]"
               />
               {/* Floating Price Badge */}
               <div className="absolute -bottom-4 -right-4 bg-brand-blue text-white rounded-xl p-4 shadow-lg animate-float">
