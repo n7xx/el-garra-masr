@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, MapPin, Clock, Facebook, Instagram } from "lucide-react";
+import logo from "@/assets/logo.jpg";
 
 const Footer = () => {
   return (
@@ -10,16 +11,17 @@ const Footer = () => {
           {/* About */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-gradient-hero rounded-full flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">غ</span>
-              </div>
-              <div>
-                <h3 className="text-lg font-bold text-white">جزارة ومشويات</h3>
-                <p className="text-gold font-semibold">الغربية</p>
-              </div>
+              <img 
+                src={logo} 
+                alt="جزارة الغربية" 
+                className="h-16 w-auto object-contain bg-white rounded-lg p-1"
+              />
             </div>
-            <p className="text-secondary-foreground/80 leading-relaxed">
-              لحوم بلدي طازة ومشويات مميزة بأفضل الأسعار. نخدم الإسكندرية بالكامل مع توصيل سريع.
+            <p className="text-secondary-foreground/80 leading-relaxed mb-2">
+              جزارة الغربية - اسم يعني الثقة
+            </p>
+            <p className="text-secondary-foreground/70 text-sm leading-relaxed">
+              ملوك اللحمة البلدي في مصر. لحوم طازة ومشويات مميزة بأفضل الأسعار.
             </p>
           </div>
 
@@ -52,11 +54,11 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="tel:+201234567890"
+                  href="tel:19026"
                   className="flex items-center gap-2 text-secondary-foreground/80 hover:text-gold transition-colors"
                 >
                   <Phone className="w-5 h-5 text-gold" />
-                  <span>01234567890</span>
+                  <span className="font-bold text-lg">الخط الساخن: 19026</span>
                 </a>
               </li>
               <li className="flex items-start gap-2 text-secondary-foreground/80">
@@ -75,11 +77,13 @@ const Footer = () => {
             <h4 className="text-lg font-bold text-white mb-4">تابعنا</h4>
             <div className="flex gap-3 mb-6">
               <a
-                href="#"
-                className="w-10 h-10 bg-secondary/50 rounded-full flex items-center justify-center hover:bg-gold transition-colors group"
+                href="https://www.facebook.com/profile.php?id=100088041447494"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-secondary/50 rounded-full flex items-center justify-center hover:bg-brand-blue transition-colors group"
                 aria-label="فيسبوك"
               >
-                <Facebook className="w-5 h-5 group-hover:text-charcoal" />
+                <Facebook className="w-5 h-5" />
               </a>
               <a
                 href="#"
@@ -101,7 +105,7 @@ const Footer = () => {
       <div className="border-t border-secondary/30">
         <div className="container-rtl py-4">
           <p className="text-center text-secondary-foreground/60 text-sm">
-            © {new Date().getFullYear()} جزارة ومشويات الغربية - جميع الحقوق محفوظة
+            © {new Date().getFullYear()} جزارة الغربية - خلف محمد خالد - جميع الحقوق محفوظة
           </p>
         </div>
       </div>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.jpg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,9 +24,9 @@ const Header = () => {
       <div className="bg-primary text-primary-foreground py-2">
         <div className="container-rtl flex items-center justify-between text-sm">
           <div className="flex items-center gap-4">
-            <a href="tel:+201234567890" className="flex items-center gap-1 hover:text-gold transition-colors">
+            <a href="tel:19026" className="flex items-center gap-1 hover:text-gold transition-colors">
               <Phone className="w-4 h-4" />
-              <span>01234567890</span>
+              <span className="font-bold">الخط الساخن: 19026</span>
             </a>
           </div>
           <div className="hidden sm:flex items-center gap-1 text-primary-foreground/80">
@@ -40,13 +41,11 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-gradient-hero rounded-full flex items-center justify-center shadow-md">
-              <span className="text-primary-foreground font-bold text-xl">غ</span>
-            </div>
-            <div className="hidden sm:block">
-              <h1 className="text-lg font-bold text-foreground leading-tight">جزارة ومشويات</h1>
-              <p className="text-sm text-primary font-semibold">الغربية</p>
-            </div>
+            <img 
+              src={logo} 
+              alt="جزارة الغربية - اسم يعني الثقة" 
+              className="h-14 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -74,9 +73,9 @@ const Header = () => {
               </a>
             </Button>
             <Button variant="call" size="sm" asChild>
-              <a href="tel:+201234567890">
+              <a href="tel:19026">
                 <Phone className="w-4 h-4" />
-                اتصل الآن
+                19026
               </a>
             </Button>
           </div>
@@ -116,9 +115,9 @@ const Header = () => {
                   </a>
                 </Button>
                 <Button variant="call" className="flex-1" asChild>
-                  <a href="tel:+201234567890">
+                  <a href="tel:19026">
                     <Phone className="w-4 h-4" />
-                    اتصل
+                    19026
                   </a>
                 </Button>
               </div>

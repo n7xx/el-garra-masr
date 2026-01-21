@@ -1,5 +1,6 @@
 import { Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.jpg";
 
 const CTASection = () => {
   return (
@@ -11,6 +12,11 @@ const CTASection = () => {
           <div className="absolute bottom-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
 
           <div className="relative z-10">
+            <img 
+              src={logo} 
+              alt="جزارة الغربية" 
+              className="h-20 w-auto mx-auto mb-6 bg-white rounded-xl p-2"
+            />
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
               جاهز تطلب؟
             </h2>
@@ -20,9 +26,9 @@ const CTASection = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="gold" size="xl" asChild>
-                <a href="tel:+201234567890">
+                <a href="tel:19026">
                   <Phone className="w-6 h-6" />
-                  اتصل الآن
+                  الخط الساخن 19026
                 </a>
               </Button>
               <Button variant="whatsapp" size="xl" asChild>
