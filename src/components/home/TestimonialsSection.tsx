@@ -1,5 +1,12 @@
 import { Star, Quote } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const testimonials = [
   {
@@ -32,6 +39,28 @@ const testimonials = [
   },
 ];
 
+const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) => (
+  <Card className="bg-card border-border hover:shadow-lg transition-all duration-300 group h-full">
+    <CardContent className="p-6">
+      <div className="mb-4">
+        <Quote className="w-8 h-8 text-gold/50 group-hover:text-gold transition-colors" />
+      </div>
+      <div className="flex gap-1 mb-3">
+        {[...Array(testimonial.rating)].map((_, i) => (
+          <Star key={i} className="w-4 h-4 text-gold fill-gold" />
+        ))}
+      </div>
+      <p className="text-foreground/80 text-sm leading-relaxed mb-4">
+        "{testimonial.text}"
+      </p>
+      <div className="border-t border-border pt-4">
+        <p className="font-bold text-foreground">{testimonial.name}</p>
+        <p className="text-muted-foreground text-sm">{testimonial.location}</p>
+      </div>
+    </CardContent>
+  </Card>
+);
+
 const TestimonialsSection = () => {
   return (
     <section className="section-padding bg-muted/30">
@@ -50,41 +79,33 @@ const TestimonialsSection = () => {
           </p>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Mobile Carousel */}
+        <div className="md:hidden">
+          <Carousel
+            opts={{
+              align: "start",
+              direction: "rtl",
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-mr-4">
+              {testimonials.map((testimonial) => (
+                <CarouselItem key={testimonial.id} className="pr-4 basis-[85%]">
+                  <TestimonialCard testimonial={testimonial} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="flex justify-center gap-2 mt-6">
+              <CarouselPrevious className="static translate-y-0 bg-primary text-primary-foreground hover:bg-primary/90" />
+              <CarouselNext className="static translate-y-0 bg-primary text-primary-foreground hover:bg-primary/90" />
+            </div>
+          </Carousel>
+        </div>
+
+        {/* Desktop Grid */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {testimonials.map((testimonial) => (
-            <Card 
-              key={testimonial.id} 
-              className="bg-card border-border hover:shadow-lg transition-all duration-300 group"
-            >
-              <CardContent className="p-6">
-                {/* Quote Icon */}
-                <div className="mb-4">
-                  <Quote className="w-8 h-8 text-gold/50 group-hover:text-gold transition-colors" />
-                </div>
-
-                {/* Rating */}
-                <div className="flex gap-1 mb-3">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star 
-                      key={i} 
-                      className="w-4 h-4 text-gold fill-gold" 
-                    />
-                  ))}
-                </div>
-
-                {/* Text */}
-                <p className="text-foreground/80 text-sm leading-relaxed mb-4">
-                  "{testimonial.text}"
-                </p>
-
-                {/* Author */}
-                <div className="border-t border-border pt-4">
-                  <p className="font-bold text-foreground">{testimonial.name}</p>
-                  <p className="text-muted-foreground text-sm">{testimonial.location}</p>
-                </div>
-              </CardContent>
-            </Card>
+            <TestimonialCard key={testimonial.id} testimonial={testimonial} />
           ))}
         </div>
 
