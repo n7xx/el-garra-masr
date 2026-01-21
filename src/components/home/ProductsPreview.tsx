@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SectionHeader from "@/components/common/SectionHeader";
+import AnimatedSection from "@/components/common/AnimatedSection";
+import AnimatedItem from "@/components/common/AnimatedItem";
 import meatSlices from "@/assets/meat-slices.jpg";
 import kabab from "@/assets/kabab-420.jpg";
 import ketf from "@/assets/ketf-350.jpg";
@@ -42,48 +44,52 @@ const ProductsPreview = () => {
   return (
     <section className="section-padding bg-muted">
       <div className="container-rtl">
-        <SectionHeader
-          title="منتجاتنا"
-          subtitle="تشكيلة متنوعة من اللحوم الطازة والمشويات اللذيذة"
-        />
+        <AnimatedSection>
+          <SectionHeader
+            title="منتجاتنا"
+            subtitle="تشكيلة متنوعة من اللحوم الطازة والمشويات اللذيذة"
+          />
+        </AnimatedSection>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-10">
           {categories.map((category, index) => (
-            <Link
-              key={category.id}
-              to="/products"
-              className="group block bg-card rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <div className="aspect-square relative overflow-hidden">
-                <img
-                  src={category.image}
-                  alt={category.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                <div className="absolute bottom-3 right-3 left-3">
-                  <span className="inline-block bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-md">
-                    {category.price}
-                  </span>
+            <AnimatedItem key={category.id} index={index}>
+              <Link
+                to="/products"
+                className="group block bg-card rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="aspect-square relative overflow-hidden">
+                  <img
+                    src={category.image}
+                    alt={category.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                  <div className="absolute bottom-3 right-3 left-3">
+                    <span className="inline-block bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-md">
+                      {category.price}
+                    </span>
+                  </div>
                 </div>
-              </div>
-              <div className="p-4">
-                <h3 className="font-bold text-foreground mb-1">{category.title}</h3>
-                <p className="text-muted-foreground text-sm">{category.description}</p>
-              </div>
-            </Link>
+                <div className="p-4">
+                  <h3 className="font-bold text-foreground mb-1">{category.title}</h3>
+                  <p className="text-muted-foreground text-sm">{category.description}</p>
+                </div>
+              </Link>
+            </AnimatedItem>
           ))}
         </div>
 
-        <div className="text-center">
-          <Button variant="cta" size="lg" asChild>
-            <Link to="/products">
-              شوف كل المنتجات
-              <ArrowLeft className="w-5 h-5" />
-            </Link>
-          </Button>
-        </div>
+        <AnimatedSection delay={0.4}>
+          <div className="text-center">
+            <Button variant="cta" size="lg" asChild>
+              <Link to="/products">
+                شوف كل المنتجات
+                <ArrowLeft className="w-5 h-5" />
+              </Link>
+            </Button>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   );

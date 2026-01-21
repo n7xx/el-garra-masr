@@ -1,5 +1,6 @@
 import { Phone, MessageCircle, Truck, Shield, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 import heroImage from "@/assets/grilled-meat.jpg";
 import logo from "@/assets/logo-transparent.png";
 
@@ -16,9 +17,19 @@ const HeroSection = () => {
       <div className="container-rtl relative z-10 py-12 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
-          <div className="text-white text-center lg:text-right order-2 lg:order-1">
+          <motion.div 
+            className="text-white text-center lg:text-right order-2 lg:order-1"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          >
             {/* Logo Badge with decorative organic shape */}
-            <div className="inline-block mb-6 relative">
+            <motion.div 
+              className="inline-block mb-6 relative"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               {/* Organic blob shape behind logo */}
               <svg 
                 className="absolute -inset-8 w-[calc(100%+4rem)] h-[calc(100%+4rem)] opacity-90"
@@ -36,7 +47,7 @@ const HeroSection = () => {
                 alt="جزارة الغربية" 
                 className="relative h-48 w-auto object-contain drop-shadow-2xl"
               />
-            </div>
+            </motion.div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight mb-4">
               ملوك اللحمة البلدي
@@ -84,10 +95,15 @@ const HeroSection = () => {
                 <span className="text-sm">جودة مضمونة</span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Hero Image */}
-          <div className="order-1 lg:order-2 flex justify-center lg:justify-start">
+          <motion.div 
+            className="order-1 lg:order-2 flex justify-center lg:justify-start"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          >
             <div className="relative">
               <div className="absolute -inset-4 bg-gold/20 rounded-full blur-3xl" />
               <img
@@ -96,12 +112,17 @@ const HeroSection = () => {
                 className="relative w-full max-w-md lg:max-w-lg xl:max-w-xl rounded-2xl shadow-2xl object-cover aspect-[5/4]"
               />
               {/* Floating Price Badge */}
-              <div className="absolute -bottom-4 -right-4 bg-brand-blue text-white rounded-xl p-4 shadow-lg animate-float">
+              <motion.div 
+                className="absolute -bottom-4 -right-4 bg-brand-blue text-white rounded-xl p-4 shadow-lg"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+              >
                 <p className="text-sm font-medium">كيلو اللحمة</p>
                 <p className="text-2xl font-black">380 جنيه</p>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
