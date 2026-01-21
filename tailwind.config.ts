@@ -58,9 +58,11 @@ export default {
           DEFAULT: "hsl(var(--gold))",
           foreground: "hsl(var(--gold-foreground))",
         },
-        cream: "hsl(var(--cream))",
+        "brand-red": "hsl(var(--brand-red))",
+        "brand-blue": "hsl(var(--brand-blue))",
+        "brand-cream": "hsl(var(--brand-cream))",
+        "brand-brown": "hsl(var(--brand-brown))",
         charcoal: "hsl(var(--charcoal))",
-        "dark-red": "hsl(var(--dark-red))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

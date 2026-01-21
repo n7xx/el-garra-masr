@@ -1,6 +1,7 @@
 import Layout from "@/components/layout/Layout";
-import { Phone, MessageCircle, MapPin, Clock, Mail, Facebook, Instagram } from "lucide-react";
+import { Phone, MessageCircle, MapPin, Clock, Facebook, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.jpg";
 
 const Contact = () => {
   return (
@@ -8,6 +9,11 @@ const Contact = () => {
       {/* Hero Banner */}
       <section className="bg-gradient-hero py-12 lg:py-16">
         <div className="container-rtl text-center text-white">
+          <img 
+            src={logo} 
+            alt="جزارة الغربية" 
+            className="h-20 w-auto mx-auto mb-4 bg-white rounded-xl p-2"
+          />
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4">تواصل معنا</h1>
           <p className="text-lg text-white/90 max-w-2xl mx-auto">
             نحن هنا لخدمتك - اتصل أو ابعتلنا في أي وقت
@@ -28,15 +34,15 @@ const Contact = () => {
               <div className="space-y-6">
                 {/* Phone */}
                 <a
-                  href="tel:+201234567890"
+                  href="tel:19026"
                   className="flex items-start gap-4 p-4 bg-card rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 group"
                 >
-                  <div className="w-12 h-12 bg-gradient-hero rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Phone className="w-6 h-6 text-primary-foreground" />
+                  <div className="w-12 h-12 bg-brand-blue rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-foreground mb-1">اتصل بينا</h3>
-                    <p className="text-muted-foreground text-lg" dir="ltr">01234567890</p>
+                    <h3 className="font-bold text-foreground mb-1">الخط الساخن</h3>
+                    <p className="text-primary text-2xl font-black" dir="ltr">19026</p>
                     <p className="text-sm text-muted-foreground">اضغط للاتصال مباشرة</p>
                   </div>
                 </a>
@@ -53,15 +59,15 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-bold text-foreground mb-1">واتساب</h3>
-                    <p className="text-muted-foreground text-lg" dir="ltr">01234567890</p>
-                    <p className="text-sm text-muted-foreground">ابعتلنا رسالة في أي وقت</p>
+                    <p className="text-muted-foreground text-lg">ابعتلنا رسالة</p>
+                    <p className="text-sm text-muted-foreground">رد سريع على جميع الاستفسارات</p>
                   </div>
                 </a>
 
                 {/* Address */}
                 <div className="flex items-start gap-4 p-4 bg-card rounded-xl shadow-card">
                   <div className="w-12 h-12 bg-gradient-accent rounded-xl flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-accent-foreground" />
+                    <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <h3 className="font-bold text-foreground mb-1">العنوان</h3>
@@ -88,8 +94,10 @@ const Contact = () => {
                 <h3 className="font-bold text-foreground mb-4">تابعنا على</h3>
                 <div className="flex gap-3">
                   <a
-                    href="#"
-                    className="w-12 h-12 bg-card rounded-xl flex items-center justify-center shadow-card hover:bg-primary hover:text-primary-foreground transition-colors"
+                    href="https://www.facebook.com/profile.php?id=100088041447494"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 bg-brand-blue rounded-xl flex items-center justify-center shadow-card hover:scale-110 transition-transform text-white"
                     aria-label="فيسبوك"
                   >
                     <Facebook className="w-6 h-6" />
@@ -107,9 +115,9 @@ const Contact = () => {
               {/* Quick CTA */}
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <Button variant="cta" size="lg" className="flex-1" asChild>
-                  <a href="tel:+201234567890">
+                  <a href="tel:19026">
                     <Phone className="w-5 h-5" />
-                    اتصل الآن
+                    الخط الساخن 19026
                   </a>
                 </Button>
                 <Button variant="whatsapp" size="lg" className="flex-1" asChild>

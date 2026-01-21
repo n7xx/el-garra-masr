@@ -6,64 +6,67 @@
 
 @layer base {
   :root {
-    /* Primary - Deep Red (meat/trust) */
-    --primary: 0 72% 38%;
+    /* Primary - Deep Red (brand color) */
+    --primary: 0 78% 42%;
     --primary-foreground: 0 0% 100%;
     
-    /* Secondary - Warm Brown */
-    --secondary: 25 35% 25%;
-    --secondary-foreground: 40 30% 95%;
+    /* Secondary - Royal Blue (brand accent) */
+    --secondary: 220 85% 45%;
+    --secondary-foreground: 0 0% 100%;
     
     /* Background - Warm Cream */
-    --background: 40 30% 97%;
+    --background: 35 50% 96%;
     --foreground: 25 40% 15%;
     
-    /* Card - White with warmth */
-    --card: 40 25% 99%;
+    /* Card - Light Cream */
+    --card: 35 40% 99%;
     --card-foreground: 25 40% 15%;
     
     /* Popover */
-    --popover: 40 25% 99%;
+    --popover: 35 40% 99%;
     --popover-foreground: 25 40% 15%;
     
-    /* Muted - Soft warm gray */
-    --muted: 30 20% 92%;
-    --muted-foreground: 25 15% 45%;
+    /* Muted - Soft Beige */
+    --muted: 30 30% 92%;
+    --muted-foreground: 25 20% 45%;
     
-    /* Accent - Golden/Orange (grills) */
-    --accent: 35 90% 50%;
-    --accent-foreground: 25 40% 15%;
+    /* Accent - Golden/Brown (leather-like) */
+    --accent: 30 60% 45%;
+    --accent-foreground: 0 0% 100%;
     
     /* Destructive */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
     /* Border */
-    --border: 30 20% 88%;
-    --input: 30 20% 88%;
-    --ring: 0 72% 38%;
+    --border: 30 25% 88%;
+    --input: 30 25% 88%;
+    --ring: 0 78% 42%;
     
     --radius: 0.75rem;
     
-    /* Custom Colors */
+    /* Custom Brand Colors */
+    --brand-red: 0 78% 42%;
+    --brand-blue: 220 85% 45%;
+    --brand-cream: 35 50% 92%;
+    --brand-brown: 25 45% 35%;
     --gold: 42 85% 55%;
     --gold-foreground: 25 40% 15%;
-    --cream: 40 40% 94%;
-    --dark-red: 0 65% 28%;
     --charcoal: 25 30% 18%;
     
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(0 72% 38%) 0%, hsl(0 65% 28%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(35 90% 50%) 0%, hsl(42 85% 55%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 78% 42%) 0%, hsl(0 70% 32%) 100%);
+    --gradient-blue: linear-gradient(135deg, hsl(220 85% 45%) 0%, hsl(220 80% 35%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(30 60% 45%) 0%, hsl(42 85% 55%) 100%);
     --gradient-dark: linear-gradient(180deg, hsl(25 30% 18%) 0%, hsl(25 35% 12%) 100%);
     
     /* Shadows */
     --shadow-sm: 0 2px 8px -2px hsl(25 30% 18% / 0.08);
     --shadow-md: 0 8px 24px -8px hsl(25 30% 18% / 0.12);
     --shadow-lg: 0 16px 48px -12px hsl(25 30% 18% / 0.18);
-    --shadow-glow: 0 0 40px -10px hsl(0 72% 38% / 0.3);
+    --shadow-glow: 0 0 40px -10px hsl(0 78% 42% / 0.3);
     
-    /* Sidebar (keeping defaults) */
+    /* Sidebar */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -75,25 +78,25 @@
   }
 
   .dark {
-    --primary: 0 65% 55%;
+    --primary: 0 70% 55%;
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 25 25% 20%;
-    --secondary-foreground: 40 30% 95%;
+    --secondary: 220 80% 55%;
+    --secondary-foreground: 0 0% 100%;
     
     --background: 25 30% 8%;
-    --foreground: 40 25% 95%;
+    --foreground: 35 30% 95%;
     
     --card: 25 28% 12%;
-    --card-foreground: 40 25% 95%;
+    --card-foreground: 35 30% 95%;
     
     --popover: 25 28% 12%;
-    --popover-foreground: 40 25% 95%;
+    --popover-foreground: 35 30% 95%;
     
     --muted: 25 20% 18%;
     --muted-foreground: 30 15% 60%;
     
-    --accent: 35 85% 45%;
+    --accent: 30 55% 40%;
     --accent-foreground: 0 0% 100%;
     
     --destructive: 0 62% 45%;
@@ -101,11 +104,13 @@
     
     --border: 25 20% 20%;
     --input: 25 20% 20%;
-    --ring: 0 65% 55%;
+    --ring: 0 70% 55%;
     
+    --brand-red: 0 70% 55%;
+    --brand-blue: 220 80% 55%;
+    --brand-cream: 35 30% 20%;
+    --brand-brown: 25 40% 30%;
     --gold: 42 80% 50%;
-    --cream: 40 20% 20%;
-    --dark-red: 0 60% 40%;
     --charcoal: 25 25% 10%;
     
     --sidebar-background: 240 5.9% 10%;
@@ -151,13 +156,17 @@
     background-image: var(--gradient-hero);
   }
   
-  .text-gradient-accent {
+  .text-gradient-blue {
     @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-accent);
+    background-image: var(--gradient-blue);
   }
   
   .bg-gradient-hero {
     background: var(--gradient-hero);
+  }
+  
+  .bg-gradient-blue {
+    background: var(--gradient-blue);
   }
   
   .bg-gradient-accent {

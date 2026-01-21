@@ -1,7 +1,8 @@
 import Layout from "@/components/layout/Layout";
 import { Shield, Award, Users, Truck, Clock, Heart, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-meat.jpg";
+import shopTeam from "@/assets/shop-team.jpg";
+import logo from "@/assets/logo.jpg";
 
 const values = [
   {
@@ -42,9 +43,14 @@ const About = () => {
       {/* Hero Banner */}
       <section className="bg-gradient-hero py-12 lg:py-16">
         <div className="container-rtl text-center text-white">
+          <img 
+            src={logo} 
+            alt="جزارة الغربية" 
+            className="h-24 w-auto mx-auto mb-4 bg-white rounded-xl p-2"
+          />
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4">من نحن</h1>
           <p className="text-lg text-white/90 max-w-2xl mx-auto">
-            جزارة ومشويات الغربية - اختيارك الأول للحوم الطازة في الإسكندرية
+            جزارة الغربية - اسم يعني الثقة - ملوك اللحمة البلدي في مصر
           </p>
         </div>
       </section>
@@ -59,20 +65,20 @@ const About = () => {
               </h2>
               <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
                 <p>
-                  بدأنا جزارة الغربية من سنين بهدف واحد بسيط: نقدم للعميل لحمة طازة بجودة عالية وسعر مناسب.
+                  جزارة الغربية - اسم يعني الثقة. بدأنا رحلتنا بهدف واحد بسيط: نقدم للعميل لحمة بلدي طازة بجودة عالية وسعر مناسب.
                 </p>
                 <p>
-                  مع الوقت، كبرنا وطورنا خدماتنا وضفنا المشويات واللحوم المتبّلة والصواني الجاهزة. كل ده عشان نوفر على العميل وقته ومجهوده.
+                  تحت إدارة <strong className="text-foreground">خلف محمد خالد</strong>، أصبحنا ملوك اللحمة البلدي في مصر. نفتخر بتقديم أجود أنواع اللحوم الطازة لعملائنا في الإسكندرية.
                 </p>
                 <p>
-                  النهارده، إحنا فخورين بثقة آلاف الأسر في الإسكندرية. وده اللي بيدفعنا نستمر ونطور أكتر.
+                  النهارده، إحنا فخورين بثقة آلاف الأسر اللي بتعتمد علينا يوميًا. وده اللي بيدفعنا نستمر ونطور أكتر.
                 </p>
               </div>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <Button variant="cta" size="lg" asChild>
-                  <a href="tel:+201234567890">
+                  <a href="tel:19026">
                     <Phone className="w-5 h-5" />
-                    اتصل بينا
+                    الخط الساخن 19026
                   </a>
                 </Button>
                 <Button variant="whatsapp" size="lg" asChild>
@@ -86,9 +92,9 @@ const About = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-accent rounded-2xl blur-2xl opacity-20" />
               <img
-                src={heroImage}
-                alt="لحوم طازة من جزارة الغربية"
-                className="relative rounded-2xl shadow-lg w-full aspect-[4/3] object-cover"
+                src={shopTeam}
+                alt="فريق جزارة الغربية"
+                className="relative rounded-2xl shadow-lg w-full aspect-[4/5] object-cover"
               />
             </div>
           </div>
@@ -114,8 +120,8 @@ const About = () => {
                 key={index}
                 className="bg-card rounded-xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300"
               >
-                <div className="w-14 h-14 bg-gradient-accent rounded-xl flex items-center justify-center mb-4">
-                  <value.icon className="w-7 h-7 text-accent-foreground" />
+                <div className="w-14 h-14 bg-brand-blue rounded-xl flex items-center justify-center mb-4">
+                  <value.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-2">{value.title}</h3>
                 <p className="text-muted-foreground">{value.description}</p>
@@ -136,9 +142,9 @@ const About = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="xl" asChild>
-              <a href="tel:+201234567890">
+              <a href="tel:19026">
                 <Phone className="w-6 h-6" />
-                اتصل الآن
+                الخط الساخن 19026
               </a>
             </Button>
             <Button variant="whatsapp" size="xl" asChild>

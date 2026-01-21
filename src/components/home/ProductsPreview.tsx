@@ -2,39 +2,39 @@ import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SectionHeader from "@/components/common/SectionHeader";
-import meatImage from "@/assets/fresh-meat.jpg";
-import grillImage from "@/assets/grilled-meat.jpg";
-import trayImage from "@/assets/meat-tray.jpg";
-import marinatedImage from "@/assets/marinated-meat.jpg";
+import meatSlices from "@/assets/meat-slices.jpg";
+import kabab from "@/assets/kabab-420.jpg";
+import ketf from "@/assets/ketf-350.jpg";
+import sogo2 from "@/assets/sogo2-330.jpg";
 
 const categories = [
   {
     id: 1,
-    title: "لحوم طازة",
-    description: "لحم بلدي طازة بجميع التقطيعات",
-    image: meatImage,
-    price: "من 150 ج/كيلو",
+    title: "لحم مليس",
+    description: "لحم بلدي طازة بدون عظم",
+    image: meatSlices,
+    price: "380 جنيه/كيلو",
   },
   {
     id: 2,
-    title: "مشويات جاهزة",
-    description: "كباب وكفتة وريش محضرة طازة",
-    image: grillImage,
-    price: "من 180 ج/كيلو",
+    title: "كباب حلة",
+    description: "قطع كباب مميزة للطبخ",
+    image: kabab,
+    price: "420 جنيه/كيلو",
   },
   {
     id: 3,
-    title: "صواني وعروض",
-    description: "صواني جاهزة للعائلة والعزومات",
-    image: trayImage,
-    price: "من 300 ج",
+    title: "كتف",
+    description: "لحم كتف طازة",
+    image: ketf,
+    price: "350 جنيه/كيلو",
   },
   {
     id: 4,
-    title: "لحوم متبّلة",
-    description: "جاهزة للشوي في البيت",
-    image: marinatedImage,
-    price: "من 170 ج/كيلو",
+    title: "سجق",
+    description: "سجق بلدي طازة",
+    image: sogo2,
+    price: "330 جنيه/كيلو",
   },
 ];
 
@@ -61,9 +61,9 @@ const ProductsPreview = () => {
                   alt={category.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                 <div className="absolute bottom-3 right-3 left-3">
-                  <span className="inline-block bg-gold text-charcoal text-xs font-bold px-2 py-1 rounded-md">
+                  <span className="inline-block bg-brand-blue text-white text-xs font-bold px-3 py-1 rounded-md">
                     {category.price}
                   </span>
                 </div>

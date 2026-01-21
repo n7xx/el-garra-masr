@@ -13,8 +13,8 @@ const FloatingCTA = () => {
         <MessageCircle className="w-7 h-7" />
       </a>
       <a
-        href="tel:+201234567890"
-        className="w-14 h-14 bg-gradient-accent text-accent-foreground rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+        href="tel:19026"
+        className="w-14 h-14 bg-brand-blue text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
         aria-label="اتصل الآن"
       >
         <Phone className="w-7 h-7" />

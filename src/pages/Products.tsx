@@ -2,10 +2,15 @@ import Layout from "@/components/layout/Layout";
 import SectionHeader from "@/components/common/SectionHeader";
 import { Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import meatImage from "@/assets/fresh-meat.jpg";
-import grillImage from "@/assets/grilled-meat.jpg";
-import trayImage from "@/assets/meat-tray.jpg";
-import marinatedImage from "@/assets/marinated-meat.jpg";
+import meatSlices from "@/assets/meat-slices.jpg";
+import sausages from "@/assets/sausages.jpg";
+import meat380 from "@/assets/meat-380.jpg";
+import beefsteak from "@/assets/beefsteak-420.jpg";
+import kabab from "@/assets/kabab-420.jpg";
+import meatKhodar from "@/assets/meat-khodar-380.jpg";
+import ketf from "@/assets/ketf-350.jpg";
+import sogo2 from "@/assets/sogo2-330.jpg";
+import shopTeam from "@/assets/shop-team.jpg";
 
 const categories = [
   {
@@ -13,47 +18,23 @@ const categories = [
     title: "اللحوم الطازة",
     description: "لحوم بلدي طازة من أجود المصادر، متوفرة بجميع التقطيعات حسب طلبك",
     products: [
-      { name: "لحم بتلو", price: "180 ج/كيلو", image: meatImage },
-      { name: "لحم ضاني", price: "200 ج/كيلو", image: meatImage },
-      { name: "لحم كندوز", price: "160 ج/كيلو", image: meatImage },
-      { name: "لحم رأس عصفور", price: "220 ج/كيلو", image: meatImage },
-      { name: "ريش بتلو", price: "280 ج/كيلو", image: meatImage },
-      { name: "موزة بتلو", price: "200 ج/كيلو", image: meatImage },
+      { name: "لحمة مليس (بدون عظم)", price: "380 جنيه/كيلو", image: meat380 },
+      { name: "لحمة خضار", price: "380 جنيه/كيلو", image: meatKhodar },
+      { name: "كتف", price: "350 جنيه/كيلو", image: ketf },
+      { name: "بفتيك", price: "420 جنيه/كيلو", image: beefsteak },
+      { name: "كباب حلة", price: "420 جنيه/كيلو", image: kabab },
+      { name: "لحم تقطيع", price: "380 جنيه/كيلو", image: meatSlices },
     ],
   },
   {
-    id: "grilled",
-    title: "المشويات الجاهزة",
-    description: "مشويات طازة محضرة بأيدي خبراء، جاهزة للأكل مباشرة",
+    id: "processed",
+    title: "المنتجات المصنعة",
+    description: "منتجات لحوم مصنعة طازة بوصفات مميزة",
     products: [
-      { name: "كباب", price: "200 ج/كيلو", image: grillImage },
-      { name: "كفتة", price: "180 ج/كيلو", image: grillImage },
-      { name: "ريش مشوية", price: "320 ج/كيلو", image: grillImage },
-      { name: "شيش طاووق", price: "160 ج/كيلو", image: grillImage },
-      { name: "ممبار", price: "150 ج/كيلو", image: grillImage },
-      { name: "نيفا مشوية", price: "180 ج/كيلو", image: grillImage },
-    ],
-  },
-  {
-    id: "trays",
-    title: "الصواني والعروض العائلية",
-    description: "صواني جاهزة مناسبة للعائلات والعزومات بأسعار مميزة",
-    products: [
-      { name: "صينية مشويات مشكل (2 كيلو)", price: "450 ج", image: trayImage },
-      { name: "صينية لحم بالخضار", price: "350 ج", image: trayImage },
-      { name: "عرض الأسرة (4 كيلو)", price: "599 ج", image: trayImage },
-      { name: "صينية ريش (كيلو)", price: "320 ج", image: trayImage },
-    ],
-  },
-  {
-    id: "marinated",
-    title: "اللحوم المتبّلة",
-    description: "لحوم متبّلة جاهزة للشوي في البيت بتتبيلات مميزة",
-    products: [
-      { name: "كباب متبّل", price: "190 ج/كيلو", image: marinatedImage },
-      { name: "كفتة متبّلة", price: "170 ج/كيلو", image: marinatedImage },
-      { name: "شرائح ستيك متبّلة", price: "220 ج/كيلو", image: marinatedImage },
-      { name: "أجنحة دجاج متبّلة", price: "120 ج/كيلو", image: marinatedImage },
+      { name: "سجق", price: "330 جنيه/كيلو", image: sogo2 },
+      { name: "سجق بلدي", price: "330 جنيه/كيلو", image: sausages },
+      { name: "كفتة", price: "320 جنيه/كيلو", image: shopTeam },
+      { name: "برجر فراخ", price: "320 جنيه/كيلو", image: shopTeam },
     ],
   },
 ];
@@ -66,7 +47,7 @@ const Products = () => {
         <div className="container-rtl text-center text-white">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4">منتجاتنا</h1>
           <p className="text-lg text-white/90 max-w-2xl mx-auto">
-            تشكيلة متنوعة من اللحوم الطازة والمشويات اللذيذة بأفضل الأسعار
+            ملوك اللحمة البلدي في مصر - تشكيلة متنوعة من اللحوم الطازة بأفضل الأسعار
           </p>
         </div>
       </section>
@@ -93,9 +74,9 @@ const Products = () => {
                       alt={product.name}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                     <div className="absolute bottom-3 right-3">
-                      <span className="bg-gold text-charcoal text-sm font-bold px-3 py-1 rounded-md">
+                      <span className="bg-brand-blue text-white text-sm font-bold px-3 py-1 rounded-md">
                         {product.price}
                       </span>
                     </div>
@@ -111,15 +92,15 @@ const Products = () => {
       ))}
 
       {/* CTA */}
-      <section className="section-padding bg-gradient-hero">
+      <section className="section-padding bg-gradient-blue">
         <div className="container-rtl text-center text-white">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">عايز تطلب؟</h2>
           <p className="text-white/90 mb-8">اتصل بينا دلوقتي أو ابعتلنا على واتساب</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="lg" asChild>
-              <a href="tel:+201234567890">
+              <a href="tel:19026">
                 <Phone className="w-5 h-5" />
-                اتصل الآن
+                الخط الساخن 19026
               </a>
             </Button>
             <Button variant="whatsapp" size="lg" asChild>

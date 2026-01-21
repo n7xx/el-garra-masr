@@ -1,6 +1,7 @@
 import { Phone, MessageCircle, Truck, Shield, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-meat.jpg";
+import heroImage from "@/assets/shop-team.jpg";
+import logo from "@/assets/logo.jpg";
 
 const HeroSection = () => {
   return (
@@ -16,21 +17,26 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
           <div className="text-white text-center lg:text-right order-2 lg:order-1">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-              <Shield className="w-5 h-5 text-gold" />
-              <span className="text-sm font-medium">جودة مضمونة 100%</span>
+            {/* Logo Badge */}
+            <div className="inline-block mb-6">
+              <img 
+                src={logo} 
+                alt="جزارة الغربية" 
+                className="h-24 w-auto object-contain bg-white rounded-xl p-2 shadow-lg"
+              />
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight mb-6">
-              لحوم بلدي طازة
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight mb-4">
+              ملوك اللحمة البلدي
               <br />
-              <span className="text-gold">ومشويات لذيذة</span>
-              <br />
-              بأفضل الأسعار
+              <span className="text-gold">في مصر</span>
             </h1>
 
-            <p className="text-lg lg:text-xl text-white/90 mb-8 max-w-lg mx-auto lg:mx-0 lg:mr-0">
+            <p className="text-xl lg:text-2xl text-white/90 mb-2 font-bold">
+              اسم يعني الثقة
+            </p>
+
+            <p className="text-lg text-white/80 mb-8 max-w-lg mx-auto lg:mx-0 lg:mr-0">
               جزارة الغربية - اختيارك الأول للحوم الطازة والمشويات الشهية. 
               توصيل سريع لجميع مناطق الإسكندرية.
             </p>
@@ -38,9 +44,9 @@ const HeroSection = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
               <Button variant="hero" size="xl" asChild>
-                <a href="tel:+201234567890">
+                <a href="tel:19026">
                   <Phone className="w-6 h-6" />
-                  اتصل الآن
+                  الخط الساخن 19026
                 </a>
               </Button>
               <Button variant="whatsapp" size="xl" asChild>
@@ -63,7 +69,7 @@ const HeroSection = () => {
               </div>
               <div className="flex items-center gap-2 text-white/80">
                 <Shield className="w-5 h-5 text-gold" />
-                <span className="text-sm">لحوم مضمونة</span>
+                <span className="text-sm">جودة مضمونة</span>
               </div>
             </div>
           </div>
@@ -74,13 +80,13 @@ const HeroSection = () => {
               <div className="absolute -inset-4 bg-gold/20 rounded-full blur-3xl" />
               <img
                 src={heroImage}
-                alt="لحوم طازة ومشويات شهية من جزارة الغربية"
-                className="relative w-full max-w-md lg:max-w-lg xl:max-w-xl rounded-2xl shadow-2xl object-cover aspect-[4/3]"
+                alt="فريق جزارة الغربية - لحوم طازة ومشويات شهية"
+                className="relative w-full max-w-md lg:max-w-lg xl:max-w-xl rounded-2xl shadow-2xl object-cover aspect-[4/5]"
               />
               {/* Floating Price Badge */}
-              <div className="absolute -bottom-4 -right-4 bg-gold text-charcoal rounded-xl p-4 shadow-lg animate-float">
-                <p className="text-sm font-medium">أسعار تبدأ من</p>
-                <p className="text-2xl font-black">150 ج/كيلو</p>
+              <div className="absolute -bottom-4 -right-4 bg-brand-blue text-white rounded-xl p-4 shadow-lg animate-float">
+                <p className="text-sm font-medium">كيلو اللحمة</p>
+                <p className="text-2xl font-black">380 جنيه</p>
               </div>
             </div>
           </div>
