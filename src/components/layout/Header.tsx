@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ThemeToggle from "@/components/common/ThemeToggle";
 import logo from "@/assets/logo-transparent.png";
 
 const Header = () => {
@@ -67,6 +68,7 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-3">
+            <ThemeToggle />
             <Button variant="whatsapp" size="sm" asChild>
               <a href="https://wa.me/201234567890" target="_blank" rel="noopener noreferrer">
                 واتساب

@@ -17,12 +17,15 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
           <div className="text-white text-center lg:text-right order-2 lg:order-1">
-            {/* Logo Badge */}
-            <div className="inline-block mb-6">
+            {/* Logo Badge with decorative shape */}
+            <div className="inline-block mb-6 relative">
+              {/* Decorative shape behind logo */}
+              <div className="absolute inset-0 -m-4 bg-gradient-to-br from-gold/30 to-accent/20 rounded-full blur-xl animate-pulse-slow" />
+              <div className="absolute inset-0 -m-2 border-2 border-gold/40 rounded-full" />
               <img 
                 src={logo} 
                 alt="جزارة الغربية" 
-                className="h-36 w-auto object-contain drop-shadow-lg"
+                className="relative h-44 w-auto object-contain drop-shadow-2xl"
               />
             </div>
 

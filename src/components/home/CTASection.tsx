@@ -1,26 +1,26 @@
 import { Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo-transparent.png";
 
 const CTASection = () => {
   return (
     <section className="section-padding bg-muted">
       <div className="container-rtl">
-        <div className="bg-gradient-dark rounded-2xl p-8 lg:p-16 text-center relative overflow-hidden">
+        <div className="bg-gradient-hero rounded-2xl p-8 lg:p-16 text-center relative overflow-hidden">
           {/* Background decoration */}
-          <div className="absolute top-0 left-0 w-64 h-64 bg-gold/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-          <div className="absolute bottom-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+          <div className="absolute top-0 left-0 w-64 h-64 bg-gold/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
 
           <div className="relative z-10">
             <img 
               src={logo} 
               alt="جزارة الغربية" 
-              className="h-20 w-auto mx-auto mb-6 bg-white rounded-xl p-2"
+              className="h-24 w-auto mx-auto mb-6 drop-shadow-lg"
             />
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
               جاهز تطلب؟
             </h2>
-            <p className="text-secondary-foreground/80 text-lg mb-8 max-w-xl mx-auto">
+            <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">
               اتصل بينا دلوقتي أو ابعتلنا على واتساب وهنوصلك طلبك في أسرع وقت
             </p>
 
@@ -39,7 +39,7 @@ const CTASection = () => {
               </Button>
             </div>
 
-            <p className="text-secondary-foreground/60 text-sm mt-6">
+            <p className="text-white/60 text-sm mt-6">
               متاحين يوميًا من 8 صباحًا - 12 منتصف الليل
             </p>
           </div>
