@@ -17,15 +17,24 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
           <div className="text-white text-center lg:text-right order-2 lg:order-1">
-            {/* Logo Badge with decorative shape */}
+            {/* Logo Badge with decorative organic shape */}
             <div className="inline-block mb-6 relative">
-              {/* Decorative shape behind logo */}
-              <div className="absolute inset-0 -m-4 bg-gradient-to-br from-gold/30 to-accent/20 rounded-full blur-xl animate-pulse-slow" />
-              <div className="absolute inset-0 -m-2 border-2 border-gold/40 rounded-full" />
+              {/* Organic blob shape behind logo */}
+              <svg 
+                className="absolute -inset-8 w-[calc(100%+4rem)] h-[calc(100%+4rem)] opacity-90"
+                viewBox="0 0 200 200" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path 
+                  fill="rgba(255,255,255,0.95)" 
+                  d="M47.5,-57.2C59.9,-45.8,67.5,-29.5,71.2,-11.8C74.9,5.9,74.7,25,66.1,39.4C57.5,53.8,40.5,63.5,22.6,68.7C4.7,73.9,-14.1,74.6,-30.4,68.1C-46.7,61.6,-60.5,47.9,-68.4,31.3C-76.3,14.7,-78.3,-4.8,-73.1,-22.4C-67.9,-40,-55.5,-55.7,-40.7,-66.5C-25.9,-77.3,-8.7,-83.2,5.4,-79.7C19.5,-76.2,35.1,-63.3,47.5,-57.2Z" 
+                  transform="translate(100 100)" 
+                />
+              </svg>
               <img 
                 src={logo} 
                 alt="جزارة الغربية" 
-                className="relative h-44 w-auto object-contain drop-shadow-2xl"
+                className="relative h-48 w-auto object-contain drop-shadow-2xl"
               />
             </div>
 
