@@ -1,7 +1,7 @@
 import { Phone, MessageCircle, Truck, Shield, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/shop-team.jpg";
-import logo from "@/assets/logo.jpg";
+import heroImage from "@/assets/grilled-meat.jpg";
+import logo from "@/assets/logo-transparent.png";
 
 const HeroSection = () => {
   return (
@@ -22,7 +22,7 @@ const HeroSection = () => {
               <img 
                 src={logo} 
                 alt="جزارة الغربية" 
-                className="h-24 w-auto object-contain bg-white rounded-xl p-2 shadow-lg"
+                className="h-28 w-auto object-contain drop-shadow-lg"
               />
             </div>
 
