@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo-transparent.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -44,7 +44,7 @@ const Header = () => {
             <img 
               src={logo} 
               alt="جزارة الغربية - اسم يعني الثقة" 
-              className="h-14 w-auto object-contain"
+              className="h-20 w-auto object-contain drop-shadow-md"
             />
           </Link>
 
