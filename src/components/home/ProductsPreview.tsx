@@ -63,7 +63,7 @@ const ProductsPreview = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                 <div className="absolute bottom-3 right-3 left-3">
-                  <span className="inline-block bg-brand-blue text-white text-xs font-bold px-3 py-1 rounded-md">
+                  <span className="inline-block bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-md">
                     {category.price}
                   </span>
                 </div>
