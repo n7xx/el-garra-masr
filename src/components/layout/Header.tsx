@@ -38,14 +38,14 @@ const Header = () => {
       </div>
 
       {/* Main header */}
-      <div className="container-rtl py-3">
+      <div className="container-rtl py-1.5">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
             <img 
               src={logo} 
               alt="جزارة الغربية - اسم يعني الثقة" 
-              className="h-20 w-auto object-contain drop-shadow-md"
+              className="h-14 w-auto object-contain drop-shadow-md"
             />
           </Link>
 
@@ -82,14 +82,17 @@ const Header = () => {
             </Button>
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors"
-            aria-label={isMenuOpen ? "إغلاق القائمة" : "فتح القائمة"}
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile controls */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <ThemeToggle />
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 rounded-lg hover:bg-muted transition-colors"
+              aria-label={isMenuOpen ? "إغلاق القائمة" : "فتح القائمة"}
+            >
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
