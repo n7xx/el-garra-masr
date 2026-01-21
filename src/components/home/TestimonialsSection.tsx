@@ -7,6 +7,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import AnimatedSection from "@/components/common/AnimatedSection";
+import AnimatedItem from "@/components/common/AnimatedItem";
 
 const testimonials = [
   {
@@ -66,7 +68,7 @@ const TestimonialsSection = () => {
     <section className="section-padding bg-muted/30">
       <div className="container-rtl">
         {/* Header */}
-        <div className="text-center mb-12">
+        <AnimatedSection className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-gold/10 text-gold rounded-full px-4 py-2 mb-4">
             <Star className="w-5 h-5 fill-current" />
             <span className="font-semibold">آراء عملائنا</span>
@@ -77,7 +79,7 @@ const TestimonialsSection = () => {
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             آراء حقيقية من عملاء جربوا منتجاتنا وخدماتنا
           </p>
-        </div>
+        </AnimatedSection>
 
         {/* Mobile Carousel */}
         <div className="md:hidden">
@@ -104,8 +106,10 @@ const TestimonialsSection = () => {
 
         {/* Desktop Grid */}
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {testimonials.map((testimonial) => (
-            <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+          {testimonials.map((testimonial, index) => (
+            <AnimatedItem key={testimonial.id} index={index}>
+              <TestimonialCard testimonial={testimonial} />
+            </AnimatedItem>
           ))}
         </div>
 
