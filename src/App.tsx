@@ -41,7 +41,7 @@ const App = () => (
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/checkout" element={<Checkout />} />
                 <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<ProtectedRoute><Signup /></ProtectedRoute>} />
+                <Route path="/signup" element={<ProtectedRoute requireAdmin><Signup /></ProtectedRoute>} />
                 <Route path="/dashboard" element={<ProtectedRoute><DashboardHome /></ProtectedRoute>} />
                 <Route path="/dashboard/products" element={<ProtectedRoute><DashboardProducts /></ProtectedRoute>} />
                 <Route path="/dashboard/categories" element={<ProtectedRoute><DashboardCategories /></ProtectedRoute>} />
