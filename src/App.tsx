@@ -19,6 +19,7 @@ import DashboardProducts from "./pages/dashboard/DashboardProducts";
 import DashboardCategories from "./pages/dashboard/DashboardCategories";
 import DashboardOrders from "./pages/dashboard/DashboardOrders";
 import DashboardUsers from "./pages/dashboard/DashboardUsers";
+import Signup from "./pages/Signup";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -40,6 +41,7 @@ const App = () => (
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/checkout" element={<Checkout />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<ProtectedRoute><Signup /></ProtectedRoute>} />
                 <Route path="/dashboard" element={<ProtectedRoute><DashboardHome /></ProtectedRoute>} />
                 <Route path="/dashboard/products" element={<ProtectedRoute><DashboardProducts /></ProtectedRoute>} />
                 <Route path="/dashboard/categories" element={<ProtectedRoute><DashboardCategories /></ProtectedRoute>} />
