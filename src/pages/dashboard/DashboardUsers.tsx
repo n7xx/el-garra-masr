@@ -46,19 +46,12 @@ const DashboardUsers = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      // Sign up the user via edge function would be ideal, but for now use client
-      const { data, error } = await supabase.auth.signUp({
-        email,
-        password,
-        options: { data: { full_name: fullName }, emailRedirectTo: window.location.origin },
+      const { data, error } = await supabase.functions.invoke("create-staff", {
+        body: { email, password, full_name: fullName, role },
       });
       if (error) throw error;
-      if (data.user) {
-        // Add role
-        const { error: roleError } = await supabase.from("user_roles").insert({ user_id: data.user.id, role });
-        if (roleError) throw roleError;
-      }
-      toast({ title: "تم إنشاء المستخدم", description: "سيحتاج المستخدم لتأكيد بريده الإلكتروني" });
+      if (data?.error) throw new Error(data.error);
+      toast({ title: "تم إنشاء المستخدم بنجاح" });
       setDialogOpen(false);
       setEmail(""); setPassword(""); setFullName("");
       fetchUsers();
