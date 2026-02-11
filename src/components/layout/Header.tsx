@@ -57,7 +57,7 @@ const Header = () => {
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3">
             <ThemeToggle />
             <CartSheet />
             <Button variant="whatsapp" size="sm" asChild>
