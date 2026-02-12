@@ -4,7 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useCart } from "@/contexts/CartContext";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { Plus, Minus, Beef, ArrowRight, Share2, Check } from "lucide-react";
+import { Plus, Minus, Beef, ArrowRight, Share2, Check, Flame } from "lucide-react";
 import type { Tables } from "@/integrations/supabase/types";
 
 type Product = Tables<"products">;
@@ -25,7 +25,7 @@ const ProductDetails = () => {
         .from("products")
         .select("*")
         .eq("id", id)
-        .single();
+        .maybeSingle();
 
       if (data) {
         setProduct(data);
@@ -34,7 +34,7 @@ const ProductDetails = () => {
             .from("categories")
             .select("*")
             .eq("id", data.category_id)
-            .single();
+            .maybeSingle();
           if (cat) setCategory(cat);
         }
       }
@@ -123,7 +123,7 @@ const ProductDetails = () => {
         <div className="container-rtl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
             {/* Image */}
-            <div className="aspect-square rounded-2xl overflow-hidden bg-muted">
+            <div className="aspect-square rounded-2xl overflow-hidden bg-muted relative">
               {product.image_url ? (
                 <img
                   src={product.image_url}
@@ -133,6 +133,14 @@ const ProductDetails = () => {
               ) : (
                 <div className="w-full h-full flex items-center justify-center">
                   <Beef className="w-20 h-20 text-muted-foreground/20" />
+                </div>
+              )}
+              {product.is_offer && (
+                <div className="absolute top-3 right-3">
+                  <span className="bg-destructive text-destructive-foreground text-sm font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5">
+                    <Flame className="w-4 h-4" />
+                    {product.offer_badge || "عرض"}
+                  </span>
                 </div>
               )}
             </div>
