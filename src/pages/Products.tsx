@@ -176,6 +176,15 @@ const ProductCard = ({ product, cartQty, addItem, updateQuantity }: ProductCardP
             <Beef className="w-10 h-10 text-muted-foreground/30" />
           </div>
         )}
+        {/* Offer Badge */}
+        {product.is_offer && (
+          <div className="absolute top-2 right-2">
+            <span className="bg-destructive text-destructive-foreground text-[10px] sm:text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1">
+              <Flame className="w-3 h-3" />
+              {product.offer_badge || "عرض"}
+            </span>
+          </div>
+        )}
         {/* Price Badge */}
         <div className="absolute bottom-2 right-2">
           <span className="bg-primary text-primary-foreground text-xs sm:text-sm font-bold px-2.5 py-1 rounded-lg shadow-md">

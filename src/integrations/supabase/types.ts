@@ -151,7 +151,9 @@ export type Database = {
           id: string
           image_url: string | null
           is_available: boolean
+          is_offer: boolean
           name: string
+          offer_badge: string | null
           price: number
           sort_order: number
           unit: string
@@ -164,7 +166,9 @@ export type Database = {
           id?: string
           image_url?: string | null
           is_available?: boolean
+          is_offer?: boolean
           name: string
+          offer_badge?: string | null
           price: number
           sort_order?: number
           unit?: string
@@ -177,7 +181,9 @@ export type Database = {
           id?: string
           image_url?: string | null
           is_available?: boolean
+          is_offer?: boolean
           name?: string
+          offer_badge?: string | null
           price?: number
           sort_order?: number
           unit?: string

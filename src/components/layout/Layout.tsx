@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import FloatingCTA from "../common/FloatingCTA";
+import PromoBanner from "../common/PromoBanner";
 
 interface LayoutProps {
   children: ReactNode;
@@ -14,6 +15,7 @@ const Layout = ({ children }: LayoutProps) => {
       <main className="flex-1">{children}</main>
       <Footer />
       <FloatingCTA />
+      <PromoBanner />
     </div>
   );
 };
