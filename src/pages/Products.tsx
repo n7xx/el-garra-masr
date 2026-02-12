@@ -5,6 +5,7 @@ import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Plus, Minus, Beef, Flame, UtensilsCrossed, ChefHat } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 import type { Tables } from "@/integrations/supabase/types";
 
 type Product = Tables<"products">;
@@ -162,7 +163,7 @@ const ProductCard = ({ product, cartQty, addItem, updateQuantity }: ProductCardP
   return (
     <div className="group bg-card rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 flex flex-col">
       {/* Image or Placeholder */}
-      <div className="aspect-[4/3] relative overflow-hidden bg-muted">
+      <Link to={`/product/${product.id}`} className="aspect-[4/3] relative overflow-hidden bg-muted block">
         {product.image_url ? (
           <img
             src={product.image_url}
@@ -181,13 +182,15 @@ const ProductCard = ({ product, cartQty, addItem, updateQuantity }: ProductCardP
             {product.price} ج.م
           </span>
         </div>
-      </div>
+      </Link>
 
       {/* Content */}
       <div className="p-3 sm:p-4 flex flex-col flex-1">
-        <h3 className="font-bold text-foreground text-sm sm:text-base mb-0.5 line-clamp-2">
-          {product.name}
-        </h3>
+        <Link to={`/product/${product.id}`} className="block">
+          <h3 className="font-bold text-foreground text-sm sm:text-base mb-0.5 line-clamp-2 hover:text-primary transition-colors">
+            {product.name}
+          </h3>
+        </Link>
         <p className="text-muted-foreground text-xs mb-1">/{product.unit}</p>
         {product.description && (
           <p className="text-muted-foreground text-xs mb-2 line-clamp-2">{product.description}</p>
