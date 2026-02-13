@@ -1,32 +1,13 @@
-import { useEffect, useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
 import { useCart } from "@/contexts/CartContext";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Flame, Clock, Plus, Minus, Beef, ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
-import type { Tables } from "@/integrations/supabase/types";
-
-type Product = Tables<"products">;
+import { products, type Product } from "@/data/products";
 
 const Offers = () => {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(true);
+  const offerProducts = products.filter((p) => p.is_available && p.is_offer);
   const { addItem, items, updateQuantity } = useCart();
-
-  useEffect(() => {
-    const fetchOffers = async () => {
-      const { data } = await supabase
-        .from("products")
-        .select("*")
-        .eq("is_available", true)
-        .eq("is_offer", true)
-        .order("sort_order");
-      if (data) setProducts(data);
-      setLoading(false);
-    };
-    fetchOffers();
-  }, []);
 
   const getCartQty = (productId: string) =>
     items.find((i) => i.productId === productId)?.quantity || 0;
@@ -65,11 +46,7 @@ const Offers = () => {
         </div>
       </section>
 
-      {loading ? (
-        <div className="section-padding text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto" />
-        </div>
-      ) : products.length === 0 ? (
+      {offerProducts.length === 0 ? (
         <div className="section-padding text-center">
           <ShoppingCart className="w-12 h-12 mx-auto mb-3 text-muted-foreground/40" />
           <p className="text-lg text-muted-foreground">لا توجد عروض حالياً - تابعنا للعروض الجديدة</p>
@@ -78,7 +55,7 @@ const Offers = () => {
         <section className="section-padding bg-background">
           <div className="container-rtl">
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
-              {products.map((product) => {
+              {offerProducts.map((product) => {
                 const cartQty = getCartQty(product.id);
                 return (
                   <div
@@ -98,14 +75,12 @@ const Offers = () => {
                           <Beef className="w-10 h-10 text-muted-foreground/30" />
                         </div>
                       )}
-                      {/* Offer Badge */}
                       <div className="absolute top-2 right-2">
                         <span className="bg-destructive text-destructive-foreground text-[10px] sm:text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1">
                           <Flame className="w-3 h-3" />
                           {product.offer_badge || "عرض"}
                         </span>
                       </div>
-                      {/* Price Badge */}
                       <div className="absolute bottom-2 right-2">
                         <span className="bg-primary text-primary-foreground text-xs sm:text-sm font-bold px-2.5 py-1 rounded-lg shadow-md">
                           {product.price} ج.م
