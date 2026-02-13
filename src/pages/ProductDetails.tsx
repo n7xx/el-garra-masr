@@ -1,47 +1,20 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
 import { useCart } from "@/contexts/CartContext";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Plus, Minus, Beef, ArrowRight, Share2, Check, Flame } from "lucide-react";
-import type { Tables } from "@/integrations/supabase/types";
-
-type Product = Tables<"products">;
-type Category = Tables<"categories">;
+import { products, categories } from "@/data/products";
 
 const ProductDetails = () => {
   const { id } = useParams<{ id: string }>();
-  const [product, setProduct] = useState<Product | null>(null);
-  const [category, setCategory] = useState<Category | null>(null);
-  const [loading, setLoading] = useState(true);
   const [copied, setCopied] = useState(false);
   const { addItem, items, updateQuantity } = useCart();
 
-  useEffect(() => {
-    const fetchProduct = async () => {
-      if (!id) return;
-      const { data } = await supabase
-        .from("products")
-        .select("*")
-        .eq("id", id)
-        .maybeSingle();
-
-      if (data) {
-        setProduct(data);
-        if (data.category_id) {
-          const { data: cat } = await supabase
-            .from("categories")
-            .select("*")
-            .eq("id", data.category_id)
-            .maybeSingle();
-          if (cat) setCategory(cat);
-        }
-      }
-      setLoading(false);
-    };
-    fetchProduct();
-  }, [id]);
+  const product = products.find((p) => p.id === id) || null;
+  const category = product?.category_id
+    ? categories.find((c) => c.id === product.category_id) || null
+    : null;
 
   const cartQty = product
     ? items.find((i) => i.productId === product.id)?.quantity || 0
@@ -70,16 +43,6 @@ const ProductDetails = () => {
       setTimeout(() => setCopied(false), 2000);
     }
   };
-
-  if (loading) {
-    return (
-      <Layout>
-        <div className="section-padding text-center min-h-[60vh] flex items-center justify-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto" />
-        </div>
-      </Layout>
-    );
-  }
 
   if (!product) {
     return (
