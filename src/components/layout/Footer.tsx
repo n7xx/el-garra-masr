@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
-import { Phone, MapPin, Clock, Facebook, Instagram } from "lucide-react";
+import { Phone, MapPin, Clock, Facebook, Instagram, Linkedin } from "lucide-react";
 import logo from "@/assets/logo.jpg";
+import fourCreativeLight from "@/assets/4creative-light.png";
+import fourCreativeDark from "@/assets/4creative-dark.png";
 
 const branches = [
   { name: "العصافرة (الرئيسي)", phone: "5514931", address: "جمال عبد الناصر العصافرة بحري", mapQuery: "العصافرة+بحري+الاسكندرية" },
@@ -131,10 +133,53 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-secondary/30">
-        <div className="container-rtl py-4">
+        <div className="container-rtl py-4 space-y-3">
           <p className="text-center text-secondary-foreground/60 text-sm">
-            © {new Date().getFullYear()} جزارة الغربية - خلف محمد خالد - جميع الحقوق محفوظة
+            © {new Date().getFullYear()} جزارة و مشويات الغربية - جميع الحقوق محفوظة
           </p>
+
+          {/* 4Creative Credit */}
+          <div className="flex flex-col items-center gap-2">
+            <a
+              href="https://4creative.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-opacity hover:opacity-80"
+            >
+              <img
+                src={fourCreativeLight}
+                alt="4Creative"
+                className="h-10 w-auto object-contain dark:hidden"
+              />
+              <img
+                src={fourCreativeDark}
+                alt="4Creative"
+                className="h-10 w-auto object-contain hidden dark:block"
+              />
+            </a>
+            <p className="text-secondary-foreground/50 text-xs flex items-center gap-1 flex-wrap justify-center">
+              Developed by
+              <a
+                href="https://www.linkedin.com/in/yousefelgendy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-secondary-foreground/70 hover:text-gold transition-colors font-medium inline-flex items-center gap-0.5"
+              >
+                <Linkedin className="w-3 h-3" />
+                Yousef Elgendy
+              </a>
+              &
+              <a
+                href="https://www.linkedin.com/in/n7xx/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-secondary-foreground/70 hover:text-gold transition-colors font-medium inline-flex items-center gap-0.5"
+              >
+                <Linkedin className="w-3 h-3" />
+                Nashaat Fathy
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
